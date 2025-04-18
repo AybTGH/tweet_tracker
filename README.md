@@ -150,6 +150,17 @@ Visualize tweets in **Kibana** after they’re ingested into **Elasticsearch**.
 
 - Visualize sentiment distribution (positive, negative, neutral) once integrated and indexed.
 
+### 📊 **Spring Boot Actuator Monitoring**
+
+Spring Boot Actuator provides production-ready features for monitoring your application, including health checks, metrics, and more.
+
+To access the Actuator endpoints:
+
+- **Health Check**: [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health)
+- **Metrics**: [http://localhost:8080/actuator/metrics](http://localhost:8080/actuator/metrics)
+- **Info**: [http://localhost:8080/actuator/info](http://localhost:8080/actuator/info)
+
+
 ## 💻 **Development Setup**
 ### 1. Install Dependencies
 
