@@ -1,0 +1,29 @@
+name: CI - Build Docker Image
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout le code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Setup JDK
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+
+      # 3️⃣ Build Spring Boot jar
+      - name: Build JAR
+        run: mvn clean package -DskipTests
+
+      # 4️⃣ Build Docker image
+      - name: Build Docker image
+        run: docker build -t tweet-ingestor-app:latest .
